@@ -50,7 +50,7 @@ const (
 )
 
 // Formatter transforms the input into a formatted string.
-type Formatter func(interface{}) string
+type Formatter = zerolog.Formatter
 
 // ConsoleWriter parses the JSON input and writes it in an
 // (optionally) colorized, human-friendly format to Out.
@@ -440,8 +440,8 @@ func consoleDefaultFormatErrFieldValue(noColor bool) Formatter {
 	}
 }
 
-//看不懂这函数啥意思
-//来自 zerolog/encoder_json.go
+// 看不懂这函数啥意思
+// 来自 zerolog/encoder_json.go
 func decodeIfBinaryToBytes(in []byte) []byte {
 	return in
 }
